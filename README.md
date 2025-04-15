@@ -1,5 +1,3 @@
-Here’s a clean and clear project documentation you can include in your README file or project report:
-
 ---
 
 ## **Project Title: Hotel Booking Manager**
