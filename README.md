@@ -1,24 +1,3 @@
----
-
-## **Project Title: Hotel Booking Manager**
-
-### **Student Name:** Mekishova Seyil
-
----
-
-### **Challenges Faced:**
-
-- **Email validation:** Implemented with regex to ensure reliable pattern checking.
-- **Room type consistency:** Needed logic to handle various casings (e.g., "SINGLE", "single") and standardize output.
-- **Immediate persistence:** Ensuring data is saved right after every change to prevent data loss.
-- **Graceful error handling:** Preventing the app from crashing on invalid inputs and making it user-friendly.
-
----
-
-Second report 
-
----
-
 # **Hotel Booking Manager**
 
 ## **Student Name**  
@@ -196,5 +175,14 @@ Suite: 1
 - Invalid room type: `Luxury` ➜ `Invalid room type. Please enter Single, Double, or Suite.`
 - Updating non-existent booking ID: `Booking not found.`
 - Deleting from an empty list: `Booking not found.`
+
+---
+
+### **Challenges Faced:**
+
+- **Email validation:** Implemented with regex to ensure reliable pattern checking.
+- **Room type consistency:** Needed logic to handle various casings (e.g., "SINGLE", "single") and standardize output.
+- **Immediate persistence:** Ensuring data is saved right after every change to prevent data loss.
+- **Graceful error handling:** Preventing the app from crashing on invalid inputs and making it user-friendly.
 
 ---
