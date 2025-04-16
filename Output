@@ -1,0 +1,139 @@
+"C:\Program Files\Java\jdk-23\bin\java.exe" "-javaagent:C:\Users\abiro\AppData\Local\Programs\IntelliJ IDEA Community Edition\lib\idea_rt.jar=60435" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\abiro\IdeaProjects\Hotel_D\out\production\Hotel_D HotelBookingManager
+
+Hotel Booking Manager
+1. Create Booking
+2. View All Bookings
+3. Update Booking
+4. Delete Booking
+5. Generate Report
+6. Exit
+Choose an option: 1
+Enter guest name: Seyil
+Enter guest email: seyil@gmail.com
+Enter room type (Single/Double/Suite): single
+Booking created successfully.
+
+Hotel Booking Manager
+1. Create Booking
+2. View All Bookings
+3. Update Booking
+4. Delete Booking
+5. Generate Report
+6. Exit
+Choose an option: 1
+Enter guest name: Anna
+Enter guest email: anna/gmail.com
+Invalid email format. Please try again.
+Enter guest email: anna@gmail.com
+Enter room type (Single/Double/Suite): //
+Invalid room type. Please enter Single, Double, or Suite.
+Enter room type (Single/Double/Suite): double
+Booking created successfully.
+
+Hotel Booking Manager
+1. Create Booking
+2. View All Bookings
+3. Update Booking
+4. Delete Booking
+5. Generate Report
+6. Exit
+Choose an option: 2
+Booking ID: 1, Name: Seyil, Email: seyil@gmail.com, Room Type: Single
+Booking ID: 2, Name: Anna, Email: anna@gmail.com, Room Type: Double
+
+Hotel Booking Manager
+1. Create Booking
+2. View All Bookings
+3. Update Booking
+4. Delete Booking
+5. Generate Report
+6. Exit
+Choose an option: 3
+Enter booking ID to update: 2
+Enter new guest name (leave blank to keep current):  
+Enter new email (leave blank to keep current): 
+Enter new room type (leave blank to keep current): suite
+Booking updated successfully.
+
+Hotel Booking Manager
+1. Create Booking
+2. View All Bookings
+3. Update Booking
+4. Delete Booking
+5. Generate Report
+6. Exit
+Choose an option: 2
+Booking ID: 1, Name: Seyil, Email: seyil@gmail.com, Room Type: Single
+Booking ID: 2, Name: Anna, Email: anna@gmail.com, Room Type: Suite
+
+Hotel Booking Manager
+1. Create Booking
+2. View All Bookings
+3. Update Booking
+4. Delete Booking
+5. Generate Report
+6. Exit
+Choose an option: 4
+Enter booking ID to delete: 1
+Booking deleted.
+
+Hotel Booking Manager
+1. Create Booking
+2. View All Bookings
+3. Update Booking
+4. Delete Booking
+5. Generate Report
+6. Exit
+Choose an option: 2
+Booking ID: 2, Name: Anna, Email: anna@gmail.com, Room Type: Suite
+
+Hotel Booking Manager
+1. Create Booking
+2. View All Bookings
+3. Update Booking
+4. Delete Booking
+5. Generate Report
+6. Exit
+Choose an option: 1
+Enter guest name: Tom
+Enter guest email: tomm21@gmail.com
+Enter room type (Single/Double/Suite): double
+Booking created successfully.
+
+Hotel Booking Manager
+1. Create Booking
+2. View All Bookings
+3. Update Booking
+4. Delete Booking
+5. Generate Report
+6. Exit
+Choose an option: 1
+Enter guest name: Janny
+Enter guest email: jan22@gmail.com
+Enter room type (Single/Double/Suite): single
+Booking created successfully.
+
+Hotel Booking Manager
+1. Create Booking
+2. View All Bookings
+3. Update Booking
+4. Delete Booking
+5. Generate Report
+6. Exit
+Choose an option: 5
+
+Total Bookings: 3
+Suite: 1
+Single: 1
+Double: 1
+
+Hotel Booking Manager
+1. Create Booking
+2. View All Bookings
+3. Update Booking
+4. Delete Booking
+5. Generate Report
+6. Exit
+Choose an option: 6
+
+Process finished with exit code 0
