@@ -6,43 +6,6 @@
 
 ---
 
-### **Technical Overview:**
-
-#### **1. Algorithms & Logic:**
-
-- **ID Assignment:** Automatically assigns a unique booking ID by incrementing the last available ID.
-- **Validation Looping:** Ensures valid input by using loops that prompt the user until a correct email format or room type is entered.
-- **Room Type Normalization:** Uses a helper method to standardize room types into a consistent format regardless of input casing.
-
-#### **2. Data Structures Used:**
-
-- `ArrayList<Booking>` – To store all booking records dynamically in memory.
-- `HashMap<String, Long>` – To count the number of bookings by room type in report generation.
-
-#### **3. Classes and Methods:**
-
-- **`HotelBookingManager` (Main Class):**
-  - `mainMenu()` – Displays options and navigates the user through the program.
-  - `createBooking()` – Collects and validates user input to create a booking.
-  - `updateBooking()` – Updates existing booking details with input checks.
-  - `deleteBooking()` – Deletes a booking by ID after checking existence.
-  - `generateReport()` – Displays a report of all bookings and room type counts.
-  - `loadBookings()` and `saveBookings()` – Handle reading from and writing to a CSV file.
-
-- **`Booking` (Data Model Class):**
-  - Contains fields: `id`, `guestName`, `email`, `roomType`.
-  - Getter and setter methods.
-  - `toString()` method overridden for clean display of bookings.
-
-#### **4. File Handling:**
-
-- Bookings are saved in a file named `bookings.csv`.
-- Each booking is written as a single line in CSV format:  
-  `id,name,email,roomType`
-- The system loads this file during startup and saves updates immediately after each create, update, or delete operation.
-
----
-
 ### **Challenges Faced:**
 
 - **Email validation:** Implemented with regex to ensure reliable pattern checking.
@@ -89,6 +52,43 @@ This project is a simple, modular hotel booking management system that:
 - 📊 Generate a report summarizing room type usage.
 - 💾 Data persistence via `bookings.csv`.
 - 🛡 Input validation for email format and room types.
+
+---
+
+### **Technical Overview:**
+
+#### **1. Algorithms & Logic:**
+
+- **ID Assignment:** Automatically assigns a unique booking ID by incrementing the last available ID.
+- **Validation Looping:** Ensures valid input by using loops that prompt the user until a correct email format or room type is entered.
+- **Room Type Normalization:** Uses a helper method to standardize room types into a consistent format regardless of input casing.
+
+#### **2. Data Structures Used:**
+
+- `ArrayList<Booking>` – To store all booking records dynamically in memory.
+- `HashMap<String, Long>` – To count the number of bookings by room type in report generation.
+
+#### **3. Classes and Methods:**
+
+- **`HotelBookingManager` (Main Class):**
+  - `mainMenu()` – Displays options and navigates the user through the program.
+  - `createBooking()` – Collects and validates user input to create a booking.
+  - `updateBooking()` – Updates existing booking details with input checks.
+  - `deleteBooking()` – Deletes a booking by ID after checking existence.
+  - `generateReport()` – Displays a report of all bookings and room type counts.
+  - `loadBookings()` and `saveBookings()` – Handle reading from and writing to a CSV file.
+
+- **`Booking` (Data Model Class):**
+  - Contains fields: `id`, `guestName`, `email`, `roomType`.
+  - Getter and setter methods.
+  - `toString()` method overridden for clean display of bookings.
+
+#### **4. File Handling:**
+
+- Bookings are saved in a file named `bookings.csv`.
+- Each booking is written as a single line in CSV format:  
+  `id,name,email,roomType`
+- The system loads this file during startup and saves updates immediately after each create, update, or delete operation.
 
 ---
 
