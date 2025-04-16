@@ -6,24 +6,6 @@
 
 ---
 
-### **Description:**
-
-The **Hotel Booking Manager** is a Java-based command-line application designed to manage hotel room bookings efficiently. It allows users to create, view, update, and delete hotel room reservations. The application uses file-based data persistence via CSV files to store booking information, ensuring that data remains available between sessions. Input validation and error handling are implemented to maintain data integrity and ensure a smooth user experience.
-
----
-
-### **Objectives:**
-
-- Implement **CRUD operations** for hotel bookings (Create, Read, Update, Delete).
-- Provide a **user-friendly command-line interface** to interact with the system.
-- Ensure **input validation**, especially for email formats and predefined room types.
-- Maintain **data persistence** by saving and loading booking records from a CSV file.
-- Generate **summary reports** such as total bookings and room type distribution.
-- Apply **modular design** using object-oriented principles to enhance maintainability.
-- Handle exceptions gracefully to avoid crashes and ensure robustness.
-
----
-
 ### **Technical Overview:**
 
 #### **1. Algorithms & Logic:**
