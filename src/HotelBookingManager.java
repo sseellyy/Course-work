@@ -41,6 +41,7 @@ public class HotelBookingManager {
         System.out.print("Enter guest name: ");
         String name = scanner.nextLine().trim();
 
+        //Checking if email is valid
         String email;
         do {
             System.out.print("Enter guest email: ");
@@ -61,7 +62,9 @@ public class HotelBookingManager {
 
         room = capitalizeRoomType(room);
 
+        //getting id
         int id = bookings.isEmpty() ? 1 : bookings.get(bookings.size() - 1).getId() + 1;
+
         bookings.add(new Booking(id, name, email, room));
         saveBookings();
         System.out.println("Booking created successfully.");
@@ -104,6 +107,7 @@ public class HotelBookingManager {
             System.out.println("Invalid room type. Please enter Single, Double, or Suite.");
         } while (true);
 
+        //Update values if new ones are entered
         if (!name.isEmpty()) booking.setGuestName(name);
         if (!email.isEmpty()) booking.setEmail(email);
         if (!room.isEmpty()) booking.setRoomType(capitalizeRoomType(room));
@@ -154,6 +158,7 @@ public class HotelBookingManager {
         return room;
     }
 
+    //Search booking by ID
     private static Booking findBookingById(int id) {
         return bookings.stream().filter(b -> b.getId() == id).findFirst().orElse(null);
     }

@@ -39,6 +39,7 @@ public class Booking {
         this.roomType = roomType;
     }
 
+    //method to display booking information
     @Override
     public String toString() {
         return "Booking ID: " + id +
