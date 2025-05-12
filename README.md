@@ -1,194 +1,206 @@
-# **Hotel Booking Manager**
+Certainly! Here's the **documentation** tailored specifically for your **HotelBookingManagerCSV** Java console project that includes:
 
-## **Student Name**  
+* Room numbers from 10 to 40
+* Room type detection based on room number
+* No duplicate bookings
+* CSV persistence
+
+---
+
+# **Hotel Booking Manager CSV**
+
+## **Student Name**
+
 **Mekishova Seyil**
 
 ---
 
 ## **📊 Presentation**
 
-https://www.canva.com/design/DAGk0SmC394/NQwT-JK1CXAO2Yw3PjdZOw/edit?utm_content=DAGk0SmC394&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+[Hotel Booking Manager Presentation (Canva)](https://www.canva.com/design/DAGk0SmC394/NQwT-JK1CXAO2Yw3PjdZOw/edit?utm_content=DAGk0SmC394&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 ---
 
-## **Project Description**
+## **📝 Project Description**
 
-The **Hotel Booking Manager** is a console-based Java application designed to manage hotel room bookings. It allows users to create, view, update, and delete guest bookings, as well as generate booking reports. The program ensures data persistence by saving booking information to a CSV file (`bookings.csv`), and provides input validation to enhance reliability.
-
----
-
-## **Overview**
-
-This project is a simple, modular hotel booking management system that:
-
-- Uses object-oriented principles for better organization and scalability.
-- Handles booking data through a CSV file for storage.
-- Incorporates validation to ensure proper formatting of input data such as email addresses and room types.
-- Offers a report generation feature to display total bookings and room type distribution.
+The **Hotel Booking Manager CSV** is a console-based Java application designed to manage hotel room bookings efficiently using CSV file storage. It allows users to create, view, update, and delete bookings for specific room numbers (10–40), with room type determined automatically. The application provides real-time data persistence, validates input, and ensures that no duplicate room bookings occur.
 
 ---
 
-## **Features**
+## **💡 Overview**
 
-- ✅ Create new bookings with name, email, and room type.
-- 📄 View all existing bookings.
-- ✏️ Update bookings by ID.
-- ❌ Delete bookings by ID.
-- 📊 Generate a report summarizing room type usage.
-- 💾 Data persistence via `bookings.csv`.
-- 🛡 Input validation for email format and room types.
+This project offers a clean, structured, and beginner-friendly implementation of hotel booking functionality:
 
----
-
-### **Technical Overview:**
-
-#### **1. Algorithms & Logic:**
-
-- **ID Assignment:** Automatically assigns a unique booking ID by incrementing the last available ID.
-- **Validation Looping:** Ensures valid input by using loops that prompt the user until a correct email format or room type is entered.
-- **Room Type Normalization:** Uses a helper method to standardize room types into a consistent format regardless of input casing.
-
-#### **2. Data Structures Used:**
-
-- `ArrayList<Booking>` – To store all booking records dynamically in memory.
-- `HashMap<String, Long>` – To count the number of bookings by room type in report generation.
-
-#### **3. Classes and Methods:**
-
-- **`HotelBookingManager` (Main Class):**
-  - `mainMenu()` – Displays options and navigates the user through the program.
-  - `createBooking()` – Collects and validates user input to create a booking.
-  - `updateBooking()` – Updates existing booking details with input checks.
-  - `deleteBooking()` – Deletes a booking by ID after checking existence.
-  - `generateReport()` – Displays a report of all bookings and room type counts.
-  - `loadBookings()` and `saveBookings()` – Handle reading from and writing to a CSV file.
-
-- **`Booking` (Data Model Class):**
-  - Contains fields: `id`, `guestName`, `email`, `roomType`.
-  - Getter and setter methods.
-  - `toString()` method overridden for clean display of bookings.
-
-#### **4. File Handling:**
-
-- Bookings are saved in a file named `bookings.csv`.
-- Each booking is written as a single line in CSV format:  
-  `id,name,email,roomType`
-- The system loads this file during startup and saves updates immediately after each create, update, or delete operation.
+* Follows **object-oriented principles** using a `Booking` class.
+* Uses **CSV file** (`bookings.csv`) for storage and persistence.
+* Restricts booking to **room numbers 10–40**.
+* Automatically maps room number to a **room type**.
+* Ensures that each room can be booked **only once at a time**.
+* Allows **modification, removal**, and **reporting** of bookings.
 
 ---
 
-## **Running the Application**
+## **🚀 Features**
 
-### **Requirements:**
-- Java 8 or higher
-- Any standard IDE or terminal to run Java programs
+* ✅ Create new bookings (name, nights, price, room number).
+* 📄 View all existing bookings with room types.
+* ✏️ Update any field of a booking.
+* ❌ Delete bookings by number.
+* 📊 Generate total revenue and count report.
+* 💾 Save/load bookings from `bookings.csv`.
+* 🧠 Intelligent assignment of room types:
 
-### **Steps:**
-1. Save both `HotelBookingManager.java` and `Booking.java` in the same directory.
-2. Compile the files using:
+  * 10–19 → Single
+  * 20–29 → Double
+  * 30–34 → Family
+  * 35–40 → Luxury
+* 🔒 Prevents duplicate room bookings.
+
+---
+
+## **🧠 Technical Overview**
+
+### **1. Algorithms & Logic**
+
+* **Room Validation:** Ensures entered room number is between 10 and 40 and is not already booked.
+* **Room Type Assignment:** A method maps each room number range to a specific type.
+* **CSV Handling:** On each booking change, the file is updated immediately.
+
+### **2. Data Structures**
+
+* `ArrayList<Booking>` – Dynamic list of current bookings.
+
+### **3. Main Classes**
+
+#### `Booking`
+
+* Fields: `guestName`, `roomNumber`, `nights`, `pricePerNight`, `roomType`.
+* `getRoomType(int)` – Static method to map room number to room type.
+* `toCSV()` and `fromCSV()` – Methods to convert booking to/from CSV format.
+* `display()` – User-friendly display of a booking.
+
+#### `HotelBookingManagerCSV`
+
+* `main()` – Entry point with menu loop.
+* `createBooking()` – Validates and creates new booking.
+* `viewBookings()` – Prints all bookings.
+* `updateBooking()` – Updates guest name, room number, nights, or price.
+* `deleteBooking()` – Deletes booking by index.
+* `generateReport()` – Displays total bookings and revenue.
+* `saveBookings()` / `loadBookings()` – File I/O with `bookings.csv`.
+
+---
+
+## **📁 File Format**
+
+### `bookings.csv`
+
+Each line contains:
+
+```csv
+guestName,roomNumber,nights,pricePerNight,roomType
+```
+
+Example:
+
+```
+Alice Johnson,12,3,50.0,Single
+Bob Smith,27,2,70.0,Double
+```
+
+---
+
+## **🛠 Running the Application**
+
+### Requirements
+
+* Java 8+
+* Terminal or any IDE (e.g., IntelliJ IDEA, Eclipse)
+
+### Steps
+
+1. Save the project as `HotelBookingManagerCSV.java` (all code in one file).
+2. Compile:
+
    ```bash
-   javac HotelBookingManager.java Booking.java
+   javac HotelBookingManagerCSV.java
    ```
-3. Run the program using:
+3. Run:
+
    ```bash
-   java HotelBookingManager
+   java HotelBookingManagerCSV
    ```
 
 ---
 
-## **Functions and Methods**
+## **📌 Sample Outputs**
 
-### **HotelBookingManager.java**
+### **Creating a Booking**
 
-- `main(String[] args)` – Entry point; loads bookings and launches the menu.
-- `mainMenu()` – Displays the menu and handles user input.
-- `createBooking()` – Collects booking details and adds a new booking.
-- `viewBookings()` – Displays all current bookings.
-- `updateBooking()` – Updates an existing booking using the booking ID.
-- `deleteBooking()` – Deletes a booking using the booking ID.
-- `generateReport()` – Shows booking statistics grouped by room type.
-- `loadBookings()` – Loads booking data from `bookings.csv`.
-- `saveBookings()` – Saves current bookings to `bookings.csv`.
-- `findBookingById(int id)` – Finds a booking by ID.
-- `isValidEmail(String email)` – Validates email format using regex.
-- `isValidRoomType(String room)` – Validates room type (Single/Double/Suite).
-- `capitalizeRoomType(String room)` – Converts room type input to proper case.
+```
+Имя гостя: Alice Johnson
+Номер комнаты (10–40): 12
+Тип номера: Single
+Количество ночей: 3
+Цена за ночь: 50
+Бронирование добавлено!
+```
 
-### **Booking.java**
+### **Viewing Bookings**
 
-- Constructor and getters/setters for ID, guest name, email, and room type.
-- `toString()` – Nicely formatted string representation of a booking.
+```
+Бронирование #1
+Гость: Alice Johnson
+Номер: 12 (Single)
+Ночей: 3
+Цена за ночь: 50.0
+Общая стоимость: 150.0
+```
+
+### **Generating Report**
+
+```
+--- Отчёт ---
+Количество бронирований: 2
+Общая сумма по всем бронированиям: 310.0
+```
 
 ---
 
-## **File Format**
+## **✅ Validations**
 
-### **bookings.csv**
-
-- Stores bookings in the following format:
-  ```
-  id,guestName,email,roomType
-  1,Jane Doe,jane@example.com,Double
-  2,John Smith,john@example.com,Suite
-  ```
+* Room number must be from 10 to 40.
+* Room must not already be booked.
+* Input values like nights and price must be positive numbers.
 
 ---
 
-## **Error Handling**
+## **⚠️ Error Handling**
 
-- Input validation for email format using regular expressions.
-- Room type must be `Single`, `Double`, or `Suite`.
-- Graceful handling of file read/write errors using try-catch blocks.
-- Handles non-existent booking ID lookup for updates/deletion.
-- Prompts user until valid input is given.
+* Invalid room input triggers warning and re-prompt.
+* Booking index out of range handled gracefully.
+* Try-catch blocks for file I/O to prevent crashes on missing or corrupted files.
 
 ---
 
-## **Outputs and Test Cases**
+## **🧪 Edge Cases**
 
-### **Sample Output - Creating a Booking**
-```
-Enter guest name: Alice Johnson
-Enter guest email: alice@example.com
-Enter room type (Single/Double/Suite): Suite
-Booking created successfully.
-```
-
-### **Sample Output - Viewing Bookings**
-```
-Booking ID: 1, Name: Alice Johnson, Email: alice@example.com, Room Type: Suite
-```
-
-### **Sample Output - Updating Booking**
-```
-Enter booking ID to update: 1
-Enter new guest name (leave blank to keep current): Alice J.
-Enter new email (leave blank to keep current): 
-Enter new room type (leave blank to keep current): 
-Booking updated successfully.
-```
-
-### **Sample Output - Generating Report**
-```
-Total Bookings: 3
-Single: 1
-Double: 1
-Suite: 1
-```
-
-### **Edge Test Cases**
-- Invalid email: `example.com` ➜ `Invalid email format`
-- Invalid room type: `Luxury` ➜ `Invalid room type. Please enter Single, Double, or Suite.`
-- Updating non-existent booking ID: `Booking not found.`
-- Deleting from an empty list: `Booking not found.`
+| Case                          | Outcome                                |
+| ----------------------------- | -------------------------------------- |
+| Room number 41                | Rejected (must be 10–40)               |
+| Booking room 15 twice         | Second attempt rejected                |
+| Deleting from empty list      | Error message shown                    |
+| Corrupted or missing CSV file | Program starts with empty booking list |
 
 ---
 
-### **Challenges Faced:**
+## **🔧 Challenges Faced**
 
-- **Email validation:** Implemented with regex to ensure reliable pattern checking.
-- **Room type consistency:** Needed logic to handle various casings (e.g., "SINGLE", "single") and standardize output.
-- **Immediate persistence:** Ensuring data is saved right after every change to prevent data loss.
-- **Graceful error handling:** Preventing the app from crashing on invalid inputs and making it user-friendly.
+* Creating a consistent mapping of room number ranges to types.
+* Preventing duplicate bookings per room while keeping code simple.
+* Immediate file persistence after any operation.
+* Handling blank inputs during updates and keeping current values.
 
 ---
+
+Would you like me to generate this documentation as a downloadable `.md` file or PDF?
