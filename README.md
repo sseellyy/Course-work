@@ -1,6 +1,4 @@
 
----
-
 # **Hotel Booking Manager CSV**
 
 ## **Student Name**
