@@ -1,10 +1,3 @@
-Certainly! Here's the **documentation** tailored specifically for your **HotelBookingManagerCSV** Java console project that includes:
-
-* Room numbers from 10 to 40
-* Room type detection based on room number
-* No duplicate bookings
-* CSV persistence
-
 ---
 
 # **Hotel Booking Manager CSV**
@@ -202,5 +195,3 @@ Bob Smith,27,2,70.0,Double
 * Handling blank inputs during updates and keeping current values.
 
 ---
-
-Would you like me to generate this documentation as a downloadable `.md` file or PDF?
